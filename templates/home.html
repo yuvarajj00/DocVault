@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style-type: none;
+        }
+
+        .nav-links li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .auth-buttons {
+            display: flex;
+        }
+
+        .login-btn, .signup-btn {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            margin-left: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn:hover, .signup-btn:hover {
+            background-color: white;
+            color: #333;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            background-image: url('static/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        a:hover {
+            background-color: white;
+            color: #333;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">DocVault</div>
+        <div class="auth-buttons">
+            <a href="{{url_for('login')}}">  <button class="login-btn">  Log In</button></a>
+            <a href="{{url_for('signup')}}"> <button class="signup-btn"> Sign Up</button></a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to DocVault</h1>
+            <p>Your secure place to store and share documents. Keep your files private or share them publicly with ease.</p>
+        </div>
+    </section>
+    <!-- <a href="{{url_for('signup')}}"> signup</a>
+    <a href="{{url_for('add_file')}}"> signup</a>
+    <a href="{{url_for('user')}}"> user</a> -->
+
+    
+
+</body>
+</html>

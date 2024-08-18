@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Docs Vault</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input[type="email"],
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #5c67f2;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4a55c1;
+        }
+
+        a {
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            color: #5c67f2;
+            font-size: 14px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="{{ url_for('signup') }}">
+        <div class="form-header">
+            <h2>Sign Up</h2>
+        </div>
+        <input type="email" name="email" placeholder="Enter Email" required>
+        <input type="text" name="name" placeholder="Enter Name" required>
+        <input type="password" name="password" placeholder="Enter Password" required>
+        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+        <a href="{{ url_for('login') }}">Already registered?</a>
+        <input type="submit" value="Sign Up" onclick="window.location.href='{{ url_for('login') }}'">
+                 
+    </form>
+</body>
+</html>
